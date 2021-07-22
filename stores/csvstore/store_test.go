@@ -2,7 +2,6 @@ package csvstore
 
 import (
 	"errors"
-	"fmt"
 	"net/http"
 	"reflect"
 	"testing"
@@ -38,7 +37,6 @@ func Test_GetByKey(t *testing.T) {
 		mock.ExpectGet(tcs[i].key).SetVal("1")
 
 		output, err := mockStore.GetByKey(tcs[i].key)
-		fmt.Println(output)
 		if !reflect.DeepEqual(err, tcs[i].err) {
 			t.Errorf("Test case [%d] failed. Expected %v, Got %v",
 				i+1, tcs[i].err, err)
@@ -75,7 +73,6 @@ func Test_GetByKey_Error(t *testing.T) {
 		mock.ExpectGet(tcs[i].key).SetErr(errors.New("error while getting a key"))
 
 		output, err := mockStore.GetByKey(tcs[i].key)
-		fmt.Println(output)
 		if !reflect.DeepEqual(err, tcs[i].err) {
 			t.Errorf("Test case [%d] failed. Expected %v, Got %v",
 				i+1, tcs[i].err, err)
@@ -115,7 +112,6 @@ func Test_GetByKey_KeyNotFound(t *testing.T) {
 		mock.ExpectGet(tcs[i].key).SetErr(redis.Nil)
 
 		output, err := mockStore.GetByKey(tcs[i].key)
-		fmt.Println(output)
 		if !reflect.DeepEqual(err, tcs[i].err) {
 			t.Errorf("Test case [%d] failed. Expected %v, Got %v",
 				i+1, tcs[i].err, err)

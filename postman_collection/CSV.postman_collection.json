@@ -1,0 +1,73 @@
+{
+	"info": {
+		"_postman_id": "197cecf2-52a0-47a4-bf5b-c95756dcc3fe",
+		"name": "CSV",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Success",
+			"item": [
+				{
+					"name": "Get value for given key",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/csv/one",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"csv",
+								"one"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get value for given key",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/csv/three",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"csv",
+								"three"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Error",
+			"item": [
+				{
+					"name": "Key not found",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/csv/eight",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"csv",
+								"eight"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

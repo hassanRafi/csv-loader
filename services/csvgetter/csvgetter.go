@@ -1,6 +1,7 @@
 package csvgetter
 
 import (
+	"log"
 	"net/http"
 
 	"github.com/csv-loader/stores"
@@ -27,6 +28,7 @@ func (s *Service) GetByKey(key string) (*types.KeyValPair, error) {
 
 	keyVal, err := s.csvGetter.GetByKey(key)
 	if err != nil {
+		log.Printf("Error while getting key from store, %v", err)
 		return nil, err
 	}
 

@@ -6,6 +6,7 @@ If we want to add a different store we need to just implement the services.CSVLo
 The following steps are to be followed in the root directory of the project to run the service.
 
 go build -o main
+
 docker-compose -f docker-compose.yaml up
 
 P.S: The app runs on port 8000.
